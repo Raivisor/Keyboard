@@ -1,7 +1,7 @@
 #include "keyboard_data.hpp"
 
-using biv::KeyData;
-using biv::KeyBoardData;
+using sea::KeyData;
+using sea::KeyBoardData;
 
 const std::vector<KeyData> KeyBoardData::KEYS = {
 	{192, "Ё"}, {49, "1"}, {50, "2"}, {51, "3"}, {52, "4"}, {53, "5"}, {54, "6"}, 

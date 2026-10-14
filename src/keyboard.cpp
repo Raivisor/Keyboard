@@ -1,6 +1,6 @@
 #include "keyboard.hpp"
 
-using biv::KeyBoard;
+using sea::KeyBoard;
 
 KeyBoard::KeyBoard(const int width, QWidget* parent) 
 	: button_width(width / 29), QWidget(parent) {

@@ -5,7 +5,7 @@
 #include <QPixmap>
 #include <QVBoxLayout>
 
-using biv::KeyBoardWindow;
+using sea::KeyBoardWindow;
 
 KeyBoardWindow::KeyBoardWindow(QWidget* parent) : QWidget(parent) {
 	const int keyboard_width = 1160;

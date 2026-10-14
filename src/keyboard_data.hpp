@@ -4,7 +4,7 @@
 
 #include "key_data.hpp"
 
-namespace biv {
+namespace sea {
 	class KeyBoardData {
 		private:
 			static const std::vector<KeyData> KEYS;

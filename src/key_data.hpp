@@ -2,7 +2,7 @@
 
 #include <QString>
 
-namespace biv {
+namespace sea {
 	struct KeyData {
 		const int code;
 		const QString text;

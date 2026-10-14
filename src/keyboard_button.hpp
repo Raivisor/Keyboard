@@ -6,7 +6,7 @@
 #include <QString>
 #include <QWidget>
 
-namespace biv {
+namespace sea {
 	class KeyBoardButton : public QPushButton {
 		public:
 			KeyBoardButton(const QString& text = "", QWidget* parent = nullptr);

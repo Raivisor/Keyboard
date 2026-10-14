@@ -8,7 +8,7 @@
 
 #include "keyboard.hpp"
 
-namespace biv {
+namespace sea {
 	class KeyBoardWindow : public QWidget {
 		private:
 			QLineEdit* display;
