@@ -18,5 +18,6 @@ namespace sea {
 			void start();
 		private slots:
 			void onGoToKeyboardRequested();
+			void onWindowClosed();
 	};
 }

@@ -1,12 +1,12 @@
 #include <QApplication>
 
-#include "keyboard_window.hpp"
+#include "app_controller.hpp"
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
-	
-    sea::KeyBoardWindow keyboard_window;
-    keyboard_window.show();
-	
+
+    sea::AppController app_controller;
+    app_controller.start();
+
     return app.exec();
 }

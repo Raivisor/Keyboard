@@ -18,6 +18,9 @@ set(PROJECT_SOURCES
 		src/keyboard_button.cpp
 		src/keyboard_data.cpp
 		src/keyboard_window.cpp
+		src/go_to_keyboard_button.cpp
+		src/menu_window.cpp
+		src/app_controller.cpp
 )
 
 qt_add_executable(${PROJECT_NAME}
