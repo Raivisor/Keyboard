@@ -42,3 +42,8 @@ void KeyBoardWindow::keyPressEvent(QKeyEvent* event) {
 		keyboard->animate_button(key);
 	}
 }
+
+void KeyBoardWindow::closeEvent(QCloseEvent* event) {
+	emit closed();
+	QWidget::closeEvent(event);
+}
