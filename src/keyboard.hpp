@@ -4,6 +4,7 @@
 #include <unordered_map>
 
 #include <QGridLayout>
+#include <QObject>
 #include <QWidget>
 
 #include "keyboard_button.hpp"
@@ -12,6 +13,7 @@
 
 namespace sea {
 	class KeyBoard : public QWidget {
+		Q_OBJECT
 		private:
 			const int button_width;
 			std::unordered_map<int, KeyBoardButton*> buttons;
@@ -32,5 +34,7 @@ namespace sea {
 				const int line,
 				const int start_position
 			);
+		signals:
+			void keyboardButtonPressed(int code);
 	};
 }

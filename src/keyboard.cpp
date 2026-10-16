@@ -1,5 +1,8 @@
 #include "keyboard.hpp"
 
+#include <QSignalBlocker>
+#include <QTimer>
+
 using sea::KeyBoard;
 
 KeyBoard::KeyBoard(const int width, QWidget* parent) 
@@ -54,7 +57,11 @@ KeyBoard::KeyBoard(const int width, QWidget* parent)
 }
 
 void KeyBoard::animate_button(const int code) {
-	buttons.at(code)->animateClick();
+    auto* btn = buttons.at(code);
+    btn->setDown(true);
+    QTimer::singleShot(100, btn, [btn]() {
+        btn->setDown(false);
+    });
 }
 
 QString KeyBoard::get_key_text(const int code) const {
@@ -81,5 +88,9 @@ void KeyBoard::create_buttons(
 		layout->addWidget(btn, line, i * 2 + start_position, 2, 2);
 		
 		buttons[data[i].code] = btn;
+
+		connect(btn, &KeyBoardButton::clicked, this, [this, code = data[i].code]() {
+			emit keyboardButtonPressed(code);		
+		});
 	}
 }

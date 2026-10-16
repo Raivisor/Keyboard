@@ -24,5 +24,11 @@ namespace sea {
 
 		signals:
 			void closed();
+
+		private slots:
+			void onKeyboardButtonPressed(int code);
+		
+		private:
+			void handleInput(int code);
 	};
 }

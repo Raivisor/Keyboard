@@ -33,17 +33,28 @@ KeyBoardWindow::KeyBoardWindow(QWidget* parent) : QWidget(parent) {
 	main_layout->addLayout(smail_layout);
     main_layout->addWidget(display);
     main_layout->addWidget(keyboard);
+
+    connect(keyboard, &KeyBoard::keyboardButtonPressed, this, &KeyBoardWindow::onKeyboardButtonPressed);
 }
 
 void KeyBoardWindow::keyPressEvent(QKeyEvent* event) {
-	const int key = event->nativeVirtualKey();
-	if (keyboard->is_key_allowed(key)) {
-		display->setText(display->text() + keyboard->get_key_text(key));
-		keyboard->animate_button(key);
-	}
+	const int code  = event->key();
+	handleInput(code);
+	QWidget::keyPressEvent(event);
+}
+
+void KeyBoardWindow::onKeyboardButtonPressed(int code) {
+	handleInput(code);
 }
 
 void KeyBoardWindow::closeEvent(QCloseEvent* event) {
 	emit closed();
 	QWidget::closeEvent(event);
+}
+
+void KeyBoardWindow::handleInput(int code) {
+	if(keyboard->is_key_allowed(code)) {
+		display->setText(display->text() + keyboard->get_key_text(code));
+		keyboard->animate_button(code);
+	}
 }
